@@ -1,7 +1,7 @@
-const toggleMenu = document.querySelector(".toggle-logo");
+const menu = document.querySelector(".menu");
+const list = document.querySelector(".list")
 
-
-toggleMenu.addEventListener("click", ()=>{
-    toggleMenu.classList.toggle("active");
-   
-})
+function changeIcon(icon){
+    list.classList.toggle("active");
+    icon.classList.toggle("fa-times")
+}

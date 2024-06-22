@@ -14,38 +14,73 @@ a{
 ul li{
     list-style: none;
 }
+
+header{
+    position: sticky;
+    top:0;
+    left:0;
+    background: #000;
+    width: 100%;
+   
+}
 nav{
+    color:gray;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 40px;
-    background: #000;
-    color:gray;
+    padding: 20px 40px;
     position: relative;
 }
-nav h1{
-    font-size: 38px;
-}
-nav ul{
+.list{
     display: flex;
 }
-nav ul li{
-    margin: 0 12px;
-    list-style: none;
-    color: gray;
+.list li{
+    padding-left: 30px;
+    font-size: 26px;
+}
+.menu{
+    display: none;
 }
 
- nav .menu{ 
-    margin-top: 4px;
-    color:gray;
-    font-size: 28px;
-    font-size:30px;
-    padding: 20px;
+.list.active{
+    display: block;
+}
+.sm{
     display: none;
 }
-nav i{
-    display: none;
+@media (max-width:670px){
+    
+    .menu{
+        display: block;
+        font-size: 40px;
+        color: white;
+        position: relative;
+        z-index: 102;
+    }
+    .list{
+        position:absolute;
+        top:0;
+        z-index: 100;
+        padding: 70px 180px;
+        width: 100%;
+        gap:70px;
+        display: none;
+        height: 100vh;
+        left:0;
+        background: #000;
+        flex-direction: column;
+    }
+    .list li{
+        padding-top: 50px;
+        transition: 0.4s;
+    }
+    .list li:hover{
+        margin-left: 30px;
+    }
 }
+
+
+
 
 .hero{
     margin: 50px 0;
@@ -157,12 +192,7 @@ footer{
 
 
 @media(max-width:670px){
-    nav{
-        min-width: 450px;
-    }
-    nav .menu{
-        display: block;
-    }
+   
     .hero{
         display: block;
         padding: 0 20px;
@@ -173,7 +203,11 @@ footer{
     .hero img{
         margin-top: 30px;
     }
-
+    
+    .left h2,
+     .left h2 span{
+        font-size: 35px;
+    }
     
     nav i{
         display: block;
@@ -190,17 +224,6 @@ footer{
         margin-bottom: 20px;
     }
 
-    nav ul{
-        flex-direction: column;
-        position: absolute;
-        background: yellow;
-        right:0;
-        top:-188px;
-        padding: 0 30px;
-       
-    }
-    ul.active{
-       top:88px;
-    }
+    
     
 }
